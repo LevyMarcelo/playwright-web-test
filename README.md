@@ -8,5 +8,5 @@
 ### Project execution:
 * npx playwright test 
 * npx playwright test --headed
+  * npx playwright show-report report 
 * npx playwright test --debug
-* npx playwright show-report report (after "npx playwright test")
