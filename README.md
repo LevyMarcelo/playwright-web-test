@@ -8,3 +8,4 @@
 ### Project execution:
 * npx playwright test 
 * npx playwright test --headed
+* npx playwright test --debug
