@@ -1,8 +1,9 @@
 # Playwright Web Test
 
-### Language and Framework:
+### Language, Framework and Code Editor:
 * TypeScript
 * Playwright
+* Visual Studio Code
 
 ### Project execution:
 * npx playwright test 
