@@ -6,8 +6,7 @@ const config: PlaywrightTestConfig = {
   reporter: [['html', { outputFolder: 'report' }]],
   use: {
     trace: 'on-first-retry',
-    screenshot: 'on',
-    video: 'on'
+    screenshot: 'on'
   },
   projects: [
     {
