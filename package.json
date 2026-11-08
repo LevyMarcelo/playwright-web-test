@@ -1,17 +1,17 @@
 {
   "name": "playwright-web-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Automação de testes E2E da aplicação SauceDemo com Playwright e TypeScript.",
   "scripts": {
     "test": "playwright test",
-    "ctest": "playwright test --project=chromium",
-    "ftest": "playwright test --project=firefox",
-    "wtest": "playwright test --project=webkit"
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report report",
+    "typecheck": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.22.2"
+    "@playwright/test": "^1.65.0",
+    "typescript": "^7.0.2"
   }
 }

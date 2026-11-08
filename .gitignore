@@ -1,5 +1,28 @@
+# Dependencies
 node_modules/
-test-results/
-playwright-report/
-package-lock.json
-report
+
+# Playwright reports and test artifacts
+/playwright-report/
+/test-results/
+/blob-report/
+/report/
+
+# Test artifacts
+/screenshots/
+/traces/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Internal AI instructions (do not publish)
+/AGENTS.md
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

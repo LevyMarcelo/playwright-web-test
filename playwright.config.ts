@@ -1,26 +1,17 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
-const config: PlaywrightTestConfig = {
+export default defineConfig({
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
   reporter: [['html', { outputFolder: 'report' }]],
+  testDir: './tests',
+  outputDir: 'test-results',
   use: {
-    trace: 'on-first-retry',
-    screenshot: 'on'
+    baseURL: 'https://www.saucedemo.com',
+    testIdAttribute: 'data-test',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    browserName: 'chromium',
+
+    // launchOptions: { slowMo: 1000 },
   },
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-  ],
-};
-export default config;
+});
