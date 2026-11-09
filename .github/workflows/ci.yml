@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Validação de qualidade
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v7
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Instalar Chromium e dependências do sistema
+        run: npx playwright install --with-deps chromium
+
+      - name: Verificar tipos (TypeScript)
+        run: npm run typecheck
+
+      - name: Executar testes automatizados
+        run: npm test
+
+      - name: Publicar relatório e evidências
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-results
+          path: |
+            report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: warn

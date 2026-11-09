@@ -132,7 +132,22 @@ npx playwright show-report report
 npm run typecheck
 ```
 
-## 11. IA aplicada à qualidade de software
+## 11. Integração Contínua (CI)
+
+O projeto utiliza GitHub Actions para executar automaticamente a validação de tipos e os testes automatizados em pushes para a branch `main` e em Pull Requests direcionados a essa branch.
+
+O workflow executa em ambiente Ubuntu com Node.js 26 LTS e contempla:
+
+- Instalação reproduzível das dependências com `npm ci`.
+- Instalação do Chromium e suas dependências.
+- Verificação de tipos com `npm run typecheck`.
+- Execução dos testes automatizados com `npm test`.
+
+O pipeline é considerado aprovado quando a verificação de tipos e todos os testes automatizados são concluídos com sucesso.
+
+O Playwright HTML Report (`report/`) e os resultados e evidências (`test-results/`) são disponibilizados como artefatos da execução, com retenção de 7 dias, inclusive quando ocorrem falhas nas etapas de validação.
+
+## 12. IA aplicada à qualidade de software
 
 A Inteligência Artificial é utilizada como apoio às atividades de Engenharia de Qualidade, desde a análise de requisitos até a implementação e revisão da automação.
 
