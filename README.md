@@ -2,11 +2,30 @@
 
 ## 1. Visão geral do projeto
 
-Este repositório apresenta um projeto prático de Engenharia de Qualidade, desenvolvido para demonstrar estratégias, arquitetura e automação de testes web com Playwright e TypeScript na aplicação SauceDemo.
+Este repositório apresenta um projeto prático de Engenharia de Qualidade de Software, utilizando a aplicação SauceDemo como objeto de estudo para demonstrar estratégia de testes, arquitetura de automação, automação de testes, integração contínua e IA aplicada à qualidade.
+
+Mais do que implementar testes automatizados, o projeto busca demonstrar como transformar o entendimento de um produto em uma estratégia de testes e em uma solução de automação confiável e sustentável.
+
+A abordagem contempla diferentes dimensões da Engenharia de Qualidade:
+
+- **Discovery e exploração:** compreender a aplicação, identificar regras de negócio, comportamentos, riscos e ambiguidades.
+- **Estratégia e planejamento:** definir escopo, prioridades e cenários de teste.
+- **Arquitetura de automação:** estabelecer padrões, organização e decisões técnicas que favoreçam a confiabilidade e a manutenibilidade.
+- **Automação e validação:** implementar e validar testes utilizando Playwright e TypeScript.
+- **Integração contínua:** integrar a execução dos testes ao pipeline de CI/CD, com relatórios e evidências.
+- **IA aplicada à qualidade:** explorar agentes especializados para apoiar a análise de requisitos, identificação de riscos, elaboração e revisão de cenários, avaliação da arquitetura, implementação e revisão da automação, além da investigação de falhas, sempre com revisão e validação humana.
 
 ## 2. Objetivos
 
-Construir uma solução de automação de testes web, com foco na validação de fluxos E2E, priorizando cobertura orientada a riscos, confiabilidade, isolamento entre testes e facilidade de manutenção.
+Construir uma solução de automação de testes web E2E, priorizando:
+
+- Cobertura orientada a riscos.
+- Estratégia de testes baseada no entendimento do produto.
+- Arquitetura simples, confiável e de fácil manutenção.
+- Isolamento entre testes.
+- Evidências e rastreabilidade dos resultados.
+- Integração contínua.
+- Aplicação de IA como apoio às atividades de Engenharia de Qualidade.
 
 ## 3. Aplicação sob teste
 
@@ -23,15 +42,38 @@ Construir uma solução de automação de testes web, com foco na validação de
 
 ## 5. Estratégia de testes
 
-A estratégia prioriza cenários funcionais, isolamento entre testes, utilização de `data-test` como locator preferencial e assertions nos próprios arquivos de teste.
+A estratégia de testes é orientada pelo entendimento da aplicação, pela identificação de regras de negócio e pela avaliação de riscos.
 
-Os Page Objects encapsulam os locators e as interações com a aplicação, enquanto as verificações dos resultados permanecem nos arquivos de teste.
+O processo contempla:
+
+- Exploração funcional da aplicação e identificação de comportamentos.
+- Análise de regras de negócio e requisitos.
+- Identificação de riscos e priorização de cenários de teste.
+- Definição de cenários positivos, negativos e de exceção.
+- Avaliação da viabilidade de automação.
+
+Na implementação, são adotadas práticas que favorecem a confiabilidade e a manutenibilidade:
+
+- Utilização de `data-test` como locator preferencial.
+- Encapsulamento de locators e interações nos Page Objects.
+- Assertions nos próprios arquivos de teste.
+- Utilização de fixtures nativas do Playwright Test.
+- Contextos de navegador independentes para cada teste.
 
 ## 6. Escopo de testes
 
-O escopo automatizado atual contempla a funcionalidade de autenticação, com 11 testes implementados, abrangendo login, validações, usuário bloqueado, logout e acesso ao catálogo sem autenticação.
+O escopo funcional contempla os seguintes domínios:
 
-As funcionalidades Catálogo de Produtos, Carrinho e Checkout estão previstas para as próximas etapas do projeto.
+| Domínio | Situação |
+|---|---|
+| Autenticação | 11 testes implementados e aprovados |
+| Catálogo de Produtos | Em Discovery |
+| Carrinho | Previsto |
+| Checkout | Previsto |
+
+A automação de autenticação contempla login, validações de credenciais, usuário bloqueado, logout e tentativas de acesso ao catálogo sem autenticação.
+
+Os demais domínios serão incorporados progressivamente, conforme a evolução da estratégia e a aprovação dos respectivos cenários de teste.
 
 ## 7. Cenários de teste
 
@@ -39,11 +81,15 @@ Os cenários de teste de autenticação estão documentados em [Cenários de Tes
 
 A documentação apresenta os objetivos, pré-condições, dados, passos e resultados esperados de cada cenário.
 
+Novos documentos serão incorporados conforme a evolução dos domínios funcionais.
+
 ## 8. Arquitetura do projeto
 
-A automação utiliza Page Object Model com os Page Objects `LoginPage` e `InventoryPage`.
+A automação utiliza **Page Object Model (POM)**, com os Page Objects `LoginPage` e `InventoryPage`.
 
 O Playwright Test fornece fixtures nativas para gerenciar os recursos de execução. Cada teste utiliza um contexto de navegador independente, favorecendo o isolamento entre execuções.
+
+As verificações dos resultados permanecem nos arquivos de teste, enquanto os Page Objects encapsulam os locators e as interações com a aplicação.
 
 ```text
 playwright-web-test/
@@ -149,7 +195,7 @@ O Playwright HTML Report (`report/`) e os resultados e evidências (`test-result
 
 ## 12. IA aplicada à qualidade de software
 
-A Inteligência Artificial é utilizada como apoio às atividades de Engenharia de Qualidade, desde a análise de requisitos até a implementação e revisão da automação.
+A Inteligência Artificial é utilizada como apoio às atividades de Engenharia de Qualidade, de forma transversal às etapas de Discovery, estratégia, automação e análise dos resultados.
 
 ### Ambiente e organização
 
@@ -158,7 +204,7 @@ O **ChatGPT Desktop** é utilizado como ambiente principal de trabalho com IA. P
 Nesse ambiente, são utilizados dois agentes especializados, com responsabilidades distintas e complementares:
 
 - **QA Analyst:** agente especializado em análise e estratégia de testes.
-- **QA Automation:** agente especializado em Automação de Testes.
+- **QA Automation:** agente especializado em automação de Testes.
 
 Os detalhes das responsabilidades estão documentados em:
 
