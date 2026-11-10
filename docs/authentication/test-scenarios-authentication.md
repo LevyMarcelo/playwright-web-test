@@ -31,11 +31,11 @@ Autenticação ocupa os identificadores CT-001 a CT-011 nesta versão do projeto
 
 Os cenários são classificados por funcionalidade e tipo:
 
-| Classificação | Descrição |
-|---|---|
-| `@Authentication` | Identifica a funcionalidade |
-| `@Positive` | Cenário de comportamento positivo |
-| `@Negative` | Cenário de comportamento negativo |
+| Classificação     | Descrição                         |
+| ----------------- | --------------------------------- |
+| `@Authentication` | Identifica a funcionalidade       |
+| `@Positive`       | Cenário de comportamento positivo |
+| `@Negative`       | Cenário de comportamento negativo |
 
 Na automação, as classificações são declaradas pela propriedade nativa `tag` do Playwright Test.
 
@@ -55,29 +55,29 @@ Cada cenário apresenta:
 
 ### Usuários
 
-| Usuário | Utilização |
-|---|---|
-| `standard_user` | Cenários positivos e validações de credenciais |
-| `locked_out_user` | Validação de usuário bloqueado |
+| Usuário           | Utilização                                     |
+| ----------------- | ---------------------------------------------- |
+| `standard_user`   | Cenários positivos e validações de credenciais |
+| `locked_out_user` | Validação de usuário bloqueado                 |
 
 Senha dos usuários válidos: `secret_sauce`.
 
 ### Dados sintéticos
 
-| Dado | Utilização |
-|---|---|
-| `invalid_user` | Simulação de usuário inexistente |
-| `invalid_password` | Simulação de senha incorreta |
+| Dado               | Utilização                       |
+| ------------------ | -------------------------------- |
+| `invalid_user`     | Simulação de usuário inexistente |
+| `invalid_password` | Simulação de senha incorreta     |
 
 `invalid_user` e `invalid_password` são dados sintéticos definidos para os testes negativos.
 
 ### Campos vazios
 
-| Condição | Cenário |
-|---|---|
-| Usuário e senha vazios | CT-004 |
-| Usuário vazio e senha preenchida | CT-005 |
-| Usuário preenchido e senha vazia | CT-006 |
+| Condição                         | Cenário |
+| -------------------------------- | ------- |
+| Usuário e senha vazios           | CT-004  |
+| Usuário vazio e senha preenchida | CT-005  |
+| Usuário preenchido e senha vazia | CT-006  |
 
 ### Perfis fora do escopo de autenticação
 
@@ -101,6 +101,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `standard_user`
 - Senha: `secret_sauce`
 
@@ -112,6 +113,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - O usuário é autenticado com sucesso.
 - A aplicação redireciona para `/inventory.html`.
 - O elemento `data-test="inventory-container"` fica visível.
@@ -125,6 +127,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `standard_user`
 - Senha: `invalid_password`
 
@@ -136,6 +139,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username and password do not match any user in this service`
 
@@ -148,6 +152,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `invalid_user`
 - Senha: `secret_sauce`
 
@@ -159,6 +164,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username and password do not match any user in this service`
 
@@ -171,6 +177,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: vazio.
 - Senha: vazia.
 
@@ -182,6 +189,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username is required`
 
@@ -194,6 +202,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: vazio.
 - Senha: `secret_sauce`
 
@@ -205,6 +214,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username is required`
 
@@ -217,6 +227,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `standard_user`
 - Senha: vazia.
 
@@ -228,6 +239,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Password is required`
 
@@ -240,6 +252,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `locked_out_user`
 - Senha: `secret_sauce`
 
@@ -251,6 +264,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 4. Acionar o botão de login.
 
 **Resultado esperado:**
+
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Sorry, this user has been locked out.`
 
@@ -263,6 +277,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `standard_user`
 - Senha: `secret_sauce`
 
@@ -275,6 +290,7 @@ Esses usuários poderão ser considerados na exploração e nos testes das demai
 5. Acionar a opção de logout.
 
 **Resultado esperado:**
+
 - A aplicação retorna à página inicial de login.
 - A URL corresponde à raiz `https://www.saucedemo.com/`.
 - O elemento `data-test="login-container"` fica visível.
@@ -290,6 +306,7 @@ Este cenário verifica o retorno imediato à tela de login. As tentativas de ace
 **Pré-condição:** contexto novo, sem autenticação anterior.
 
 **Dados:**
+
 - URL: `https://www.saucedemo.com/inventory.html`
 
 **Passos:**
@@ -297,6 +314,7 @@ Este cenário verifica o retorno imediato à tela de login. As tentativas de ace
 1. Navegar diretamente para a URL do Catálogo de Produtos.
 
 **Resultado esperado:**
+
 - O acesso ao Catálogo de Produtos é bloqueado.
 - A aplicação redireciona para a página inicial.
 - A aplicação apresenta um alerta com a mensagem: `Epic sadface: You can only access '/inventory.html' when you are logged in.`
@@ -310,6 +328,7 @@ Este cenário verifica o retorno imediato à tela de login. As tentativas de ace
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `standard_user`
 - Senha: `secret_sauce`
 
@@ -322,6 +341,7 @@ Este cenário verifica o retorno imediato à tela de login. As tentativas de ace
 5. Acionar o botão Voltar do navegador.
 
 **Resultado esperado:**
+
 - O acesso ao Catálogo de Produtos é bloqueado.
 - A aplicação apresenta um alerta com a mensagem: `Epic sadface: You can only access '/inventory.html' when you are logged in.`
 
@@ -334,6 +354,7 @@ Este cenário verifica o retorno imediato à tela de login. As tentativas de ace
 **Pré-condição:** contexto novo, sem sessão autenticada; aplicação disponível.
 
 **Dados:**
+
 - Usuário: `standard_user`
 - Senha: `secret_sauce`
 - URL: `https://www.saucedemo.com/inventory.html`
@@ -347,6 +368,7 @@ Este cenário verifica o retorno imediato à tela de login. As tentativas de ace
 5. Navegar diretamente para a URL do Catálogo de Produtos.
 
 **Resultado esperado:**
+
 - O acesso ao Catálogo de Produtos é bloqueado.
 - A aplicação apresenta um alerta com a mensagem: `Epic sadface: You can only access '/inventory.html' when you are logged in.`
 

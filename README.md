@@ -64,12 +64,12 @@ Na implementação, são adotadas práticas que favorecem a confiabilidade e a m
 
 O escopo funcional contempla os seguintes domínios:
 
-| Domínio | Situação |
-|---|---|
-| Autenticação | 11 testes implementados e aprovados |
-| Catálogo de Produtos | Em Discovery |
-| Carrinho | Previsto |
-| Checkout | Previsto |
+| Domínio              | Situação                            |
+| -------------------- | ----------------------------------- |
+| Autenticação         | 11 testes implementados e aprovados |
+| Catálogo de Produtos | Em Discovery                        |
+| Carrinho             | Previsto                            |
+| Checkout             | Previsto                            |
 
 A automação de autenticação contempla login, validações de credenciais, usuário bloqueado, logout e tentativas de acesso ao catálogo sem autenticação.
 
