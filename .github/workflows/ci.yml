@@ -1,4 +1,4 @@
-name: CI
+name: CI de Automação de Testes
 
 on:
   push:
@@ -11,11 +11,11 @@ permissions:
 
 jobs:
   test:
-    name: Validação de qualidade
-    runs-on: ubuntu-latest
+    name: Execução da pipeline de automação de testes
+    runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout do repositório
+      - name: Fazer checkout do repositório
         uses: actions/checkout@v7
 
       - name: Configurar Node.js
@@ -24,19 +24,19 @@ jobs:
           node-version: 26
           cache: npm
 
-      - name: Instalar dependências
+      - name: Instalar dependências do projeto
         run: npm ci
 
-      - name: Instalar Chromium e dependências do sistema
+      - name: Instalar Chromium e dependências do sistema operacional
         run: npx playwright install --with-deps chromium
 
-      - name: Verificar tipos (TypeScript)
+      - name: Verificar tipos com TypeScript
         run: npm run typecheck
 
       - name: Executar testes automatizados
         run: npm test
 
-      - name: Publicar relatório e evidências
+      - name: Publicar relatório e evidências dos testes
         if: always()
         uses: actions/upload-artifact@v7
         with:
