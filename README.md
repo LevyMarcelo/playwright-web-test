@@ -62,9 +62,9 @@ Na implementação, são adotadas práticas que favorecem a confiabilidade e a m
 
 ## 6. Escopo de testes
 
-O escopo funcional contempla os seguintes domínios:
+O escopo funcional contempla as seguintes funcionalidades:
 
-| Domínio              | Situação                            |
+| Funcionalidade       | Situação                            |
 | -------------------- | ----------------------------------- |
 | Autenticação         | 11 testes automatizados |
 | Catálogo de Produtos | Em Discovery                        |
