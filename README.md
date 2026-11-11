@@ -9,11 +9,11 @@ Mais do que implementar testes automatizados, o projeto busca demonstrar como tr
 A abordagem contempla diferentes dimensões da Engenharia de Qualidade:
 
 - **Discovery e exploração:** compreender a aplicação, identificar regras de negócio, comportamentos, riscos e ambiguidades.
-- **Estratégia e planejamento:** definir escopo, prioridades e cenários de teste.
+- **Estratégia e planejamento:** definir escopo, prioridades e casos de teste.
 - **Arquitetura de automação:** estabelecer padrões, organização e decisões técnicas que favoreçam a confiabilidade e a manutenibilidade.
 - **Automação e validação:** implementar e validar testes utilizando Playwright e TypeScript.
 - **Integração contínua:** integrar a execução dos testes ao pipeline de CI/CD, com relatórios e evidências.
-- **IA aplicada à qualidade:** explorar agentes especializados para apoiar a análise de requisitos, identificação de riscos, elaboração e revisão de cenários, avaliação da arquitetura, implementação e revisão da automação, além da investigação de falhas, sempre com revisão e validação humana.
+- **IA aplicada à qualidade:** explorar agentes especializados para apoiar a análise de requisitos, identificação de riscos, elaboração e revisão de casos de teste, avaliação da arquitetura, implementação e revisão da automação, além da investigação de falhas, sempre com revisão e validação humana.
 
 ## 2. Objetivos
 
@@ -48,8 +48,8 @@ O processo contempla:
 
 - Exploração funcional da aplicação e identificação de comportamentos.
 - Análise de regras de negócio e requisitos.
-- Identificação de riscos e priorização de cenários de teste.
-- Definição de cenários positivos, negativos e de exceção.
+- Identificação de riscos e priorização de casos de teste.
+- Definição de casos de teste positivos, negativos e de exceção.
 - Avaliação da viabilidade de automação.
 
 Na implementação, são adotadas práticas que favorecem a confiabilidade e a manutenibilidade:
@@ -66,22 +66,28 @@ O escopo funcional contempla os seguintes domínios:
 
 | Domínio              | Situação                            |
 | -------------------- | ----------------------------------- |
-| Autenticação         | 11 testes implementados e aprovados |
+| Autenticação         | 11 testes automatizados |
 | Catálogo de Produtos | Em Discovery                        |
 | Carrinho             | Previsto                            |
 | Checkout             | Previsto                            |
 
 A automação de autenticação contempla login, validações de credenciais, usuário bloqueado, logout e tentativas de acesso ao catálogo sem autenticação.
 
-Os demais domínios serão incorporados progressivamente, conforme a evolução da estratégia e a aprovação dos respectivos cenários de teste.
+As demais funcionalidades serão incorporadas progressivamente, conforme a evolução da estratégia e dos respectivos casos de teste.
 
-## 7. Cenários de teste
+## 7. Documentação dos casos de teste
 
-Os cenários de teste de autenticação estão documentados em [Cenários de Teste - Autenticação](docs/authentication/test-scenarios-authentication.md).
+A documentação dos casos de teste está organizada por funcionalidade e segue um padrão comum de identificação, classificação, estrutura e rastreabilidade.
 
-A documentação apresenta os objetivos, pré-condições, dados, passos e resultados esperados de cada cenário.
+**Padrão de documentação:**
 
-Novos documentos serão incorporados conforme a evolução dos domínios funcionais.
+- [Padrão de Documentação de Casos de Teste](docs/standards/test-documentation-standards.md)
+
+**Casos de teste por funcionalidade:**
+
+- [Casos de Teste - Autenticação](docs/test-scenarios/test-cases-authentication.md)
+
+Os documentos apresentam os dados utilizados, pré-condições quando aplicáveis, passos e resultados esperados de cada caso de teste.
 
 ## 8. Arquitetura do projeto
 
@@ -91,6 +97,8 @@ O Playwright Test fornece fixtures nativas para gerenciar os recursos de execuç
 
 As verificações dos resultados permanecem nos arquivos de teste, enquanto os Page Objects encapsulam os locators e as interações com a aplicação.
 
+**Estrutura do projeto:**
+
 ```text
 playwright-web-test/
 │
@@ -98,9 +106,16 @@ playwright-web-test/
 │   ├── qa-analyst.md
 │   └── qa-automation.md
 │
+├── data/
+│   ├── application-users.json
+│   └── synthetic-users.json
+│
 ├── docs/
-│   └── authentication/
-│       └── test-scenarios-authentication.md
+│   ├── standards/
+│   │   └── test-documentation-standards.md
+│   │
+│   └── test-scenarios/
+│       └── test-cases-authentication.md
 │
 ├── pages/
 │   ├── login-page.ts
@@ -142,7 +157,7 @@ npx playwright install chromium
 
 Os testes podem ser executados por meio da CLI do Playwright.
 
-**Execução dos testes**
+**Execução dos testes:**
 
 ```bash
 # Executar todos os testes
@@ -164,14 +179,14 @@ npx playwright test --grep "@Negative"
 npx playwright test --debug
 ```
 
-**Relatório de execução**
+**Relatório de execução:**
 
 ```bash
 # Abrir o relatório HTML
 npx playwright show-report report
 ```
 
-**Verificação estática**
+**Verificação estática:**
 
 ```bash
 # Verificar os tipos TypeScript
@@ -204,7 +219,7 @@ O **ChatGPT Desktop** é utilizado como ambiente principal de trabalho com IA. P
 Nesse ambiente, são utilizados dois agentes especializados, com responsabilidades distintas e complementares:
 
 - **QA Analyst:** agente especializado em análise e estratégia de testes.
-- **QA Automation:** agente especializado em automação de Testes.
+- **QA Automation:** agente especializado em automação de testes.
 
 Os detalhes das responsabilidades estão documentados em:
 
