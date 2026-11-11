@@ -85,7 +85,7 @@ A documentação dos casos de teste está organizada por funcionalidade e segue 
 
 **Casos de teste por funcionalidade:**
 
-- [Casos de Teste - Autenticação](docs/test-scenarios/test-cases-authentication.md)
+- [Casos de Teste - Autenticação](docs/test-cases/test-cases-authentication.md)
 
 Os documentos apresentam os dados utilizados, pré-condições quando aplicáveis, passos e resultados esperados de cada caso de teste.
 
@@ -114,7 +114,7 @@ playwright-web-test/
 │   ├── standards/
 │   │   └── test-documentation-standards.md
 │   │
-│   └── test-scenarios/
+│   └── test-cases/
 │       └── test-cases-authentication.md
 │
 ├── pages/
