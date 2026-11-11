@@ -6,7 +6,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 
 ## 2. Casos de teste
 
-### CT-001 — Realizar login com sucesso
+### CT-001 - Realizar login com sucesso
 
 **Classificação:** `@Authentication`, `@Positive`
 
@@ -24,7 +24,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A aplicação redireciona para `/inventory.html`.
 - O catálogo de produtos é exibido.
 
-### CT-002 — Realizar login com senha incorreta
+### CT-002 - Realizar login com senha incorreta
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -41,7 +41,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username and password do not match any user in this service`.
 
-### CT-003 — Realizar login com usuário inexistente
+### CT-003 - Realizar login com usuário inexistente
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -58,7 +58,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username and password do not match any user in this service`.
 
-### CT-004 — Realizar login com usuário e senha vazios
+### CT-004 - Realizar login com usuário e senha vazios
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -75,7 +75,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username is required`.
 
-### CT-005 — Realizar login com usuário vazio
+### CT-005 - Realizar login com usuário vazio
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -93,7 +93,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Username is required`.
 
-### CT-006 — Realizar login com senha vazia
+### CT-006 - Realizar login com senha vazia
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -111,7 +111,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Password is required`.
 
-### CT-007 — Realizar login com usuário bloqueado
+### CT-007 - Realizar login com usuário bloqueado
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -128,7 +128,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A autenticação não é realizada.
 - A aplicação apresenta a mensagem: `Epic sadface: Sorry, this user has been locked out.`
 
-### CT-008 — Realizar logout com sucesso
+### CT-008 - Realizar logout com sucesso
 
 **Classificação:** `@Authentication`, `@Positive`
 
@@ -148,7 +148,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A URL corresponde à raiz `https://www.saucedemo.com/`.
 - A página de login é exibida.
 
-### CT-009 — Acessar catálogo de produtos sem estar autenticado
+### CT-009 - Acessar catálogo de produtos sem estar autenticado
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -163,7 +163,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - A aplicação redireciona para a página inicial.
 - A aplicação apresenta um alerta com a mensagem: `Epic sadface: You can only access '/inventory.html' when you are logged in.`
 
-### CT-010 — Acessar catálogo de produtos após logout pelo botão Voltar do navegador
+### CT-010 - Acessar catálogo de produtos após logout pelo botão Voltar do navegador
 
 **Classificação:** `@Authentication`, `@Negative`
 
@@ -182,7 +182,7 @@ Cobertura dos comportamentos de autenticação da aplicação SauceDemo, incluin
 - O acesso ao catálogo de produtos é bloqueado.
 - A aplicação apresenta um alerta com a mensagem: `Epic sadface: You can only access '/inventory.html' when you are logged in.`
 
-### CT-011 — Acessar catálogo de produtos após logout por URL direta
+### CT-011 - Acessar catálogo de produtos após logout por URL direta
 
 **Classificação:** `@Authentication`, `@Negative`
 
