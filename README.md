@@ -218,13 +218,8 @@ O **ChatGPT Desktop** é utilizado como ambiente principal de trabalho com IA. P
 
 Nesse ambiente, são utilizados dois agentes especializados, com responsabilidades distintas e complementares:
 
-- **QA Analyst:** agente especializado em análise e estratégia de testes.
-- **QA Automation:** agente especializado em automação de testes.
-
-Os detalhes das responsabilidades estão documentados em:
-
-- [QA Analyst](agents/qa-analyst.md)
-- [QA Automation](agents/qa-automation.md)
+- **[QA Analyst](agents/qa-analyst.md):** agente especializado em análise e estratégia de testes.
+- **[QA Automation](agents/qa-automation.md):** agente especializado em automação de testes.
 
 ### Implementação técnica
 
