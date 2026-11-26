@@ -1,4 +1,4 @@
-# Automação de Testes Web E2E da SauceDemo
+# Engenharia de Qualidade e Automação de Testes Web E2E
 
 ## 1. Visão geral do projeto
 
@@ -33,12 +33,12 @@ Construir uma solução de automação de testes web E2E, priorizando:
 
 ## 4. Tecnologias utilizadas
 
-- **Node.js:** ambiente de execução.
-- **TypeScript:** linguagem utilizada no desenvolvimento.
 - **Playwright:** recursos de automação e interação com o navegador.
 - **Playwright Test:** runner, fixtures, execução e gerenciamento dos testes.
-- **Chromium:** navegador utilizado na execução.
 - **Playwright HTML Report:** geração de relatórios.
+- **TypeScript:** linguagem utilizada no desenvolvimento.
+- **Node.js:** ambiente de execução.
+- **Chromium:** navegador utilizado na execução.
 
 ## 5. Estratégia de testes
 
